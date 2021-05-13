@@ -1,0 +1,19 @@
+name: Com.hicupalot
+version: ${project.version}
+main: becomeranboo.com.hicupalot.Com.hicupalot
+api-version: 1.16
+authors: [ hicupalot ]
+description: Become Ranboo
+
+permissions:
+  becomeranboo.silkhand:
+    description: Gives you silk touch hands
+    default: op
+  becomeranboo.ender:
+    description: Makes enderman noises play
+    default: op
+  becomeranboo.freezelook:
+    description: Makes you freeze players on look [Switch item in hand to freeze]
+  becomeranboo.immunefreeze:
+    description: makes you immmune to freezing
+    default: op
