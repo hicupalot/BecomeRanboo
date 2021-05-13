@@ -12,6 +12,8 @@ public final class BecomeRanboo extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EndermanSounds(), this);
         getServer().getPluginManager().registerEvents(new SilkHand(), this);
         getServer().getPluginManager().registerEvents(new FreezeonSight(), this);
+        getServer().getPluginManager().registerEvents(new Teleport(), this);
+        getServer().getPluginManager().registerEvents(new ArrowDeflector(), this);
         System.out.println(ChatColor.GOLD + "[BecomeRanboo] Loaded");
     }
 
