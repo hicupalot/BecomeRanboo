@@ -24,3 +24,7 @@ permissions:
   becomeranboo.chatrecieve:
     description: Receive the ranboo-ness of chat
     default: not op
+  becomeranboo.memorybook:
+    description: Gives you a memory book
+  becomeranboo.enderimmune:
+    description: Makes you immune to Ender Mobs

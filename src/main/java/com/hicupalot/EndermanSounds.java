@@ -1,5 +1,8 @@
 package com.hicupalot;
 
+import com.destroystokyo.paper.block.TargetBlockInfo;
+import org.bukkit.FluidCollisionMode;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.Statistic;
 import org.bukkit.event.EventHandler;
@@ -19,11 +22,18 @@ public class EndermanSounds implements Listener {
     int i2 =min;
     @EventHandler
     public void Genderman(BlockBreakEvent e ){
-        if (e.getPlayer().hasPermission("becomeranboo.ender")){
-        if (i == 10){
-        e.getPlayer().playSound(e.getPlayer().getLocation(),Sound.ENTITY_ENDERMAN_AMBIENT,10,29);
-
+        if (e.getPlayer().hasPermission("becomeranboo.ender")) {
+            if (i == 10) {
+                e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.ENTITY_ENDERMAN_AMBIENT, 10, 29);
+            }
         }
+    }
+    @EventHandler
+    public void PumpkinFear(PlayerEvent e){
+        if (!e.getPlayer().hasPermission("becomeranboo.ender")) {
+            if (e.getPlayer().getTargetBlock(10, TargetBlockInfo.FluidMode.NEVER).getType() == Material.PUMPKIN){
+                e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.ENTITY_ENDERMAN_SCREAM, 10, 29);
+            }
         }
     }
 }

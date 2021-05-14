@@ -2,6 +2,7 @@ package com.hicupalot;
 
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.graalvm.compiler.nodeinfo.StructuralInput;
 
 public final class BecomeRanboo extends JavaPlugin {
 
@@ -14,6 +15,8 @@ public final class BecomeRanboo extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new FreezeonSight(), this);
         getServer().getPluginManager().registerEvents(new Teleport(), this);
         getServer().getPluginManager().registerEvents(new ArrowDeflector(), this);
+        getServer().getPluginManager().registerEvents(new EnderScare(), this);
+        getServer().getPluginManager().registerEvents(new MemoryBook(), this);
         System.out.println(ChatColor.GOLD + "[BecomeRanboo] Loaded");
     }
 
