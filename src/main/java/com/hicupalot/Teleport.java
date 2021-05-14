@@ -11,7 +11,6 @@ public class Teleport implements Listener {
     public void Teleport(AsyncPlayerChatEvent e){
         if (e.getPlayer().hasPermission("becomeranoo.teleportspecific")){
         if (e.getMessage().equals("poof")|| e.getMessage().equals("teleport")){
-            e.getPlayer().getTargetBlockExact(100);
         e.getPlayer().teleport((Location) e.getPlayer().getTargetBlockExact(100));
         e.getPlayer().getEyeLocation().getBlock().setType(Material.AIR);
         }
