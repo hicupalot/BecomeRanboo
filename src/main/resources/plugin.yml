@@ -17,5 +17,10 @@ permissions:
     default: op
   becomeranboo.arrowdeflect:
     description: Gives you the power of the enderman arrow deflection
-  becomeranoo.teleportspecific:
+  becomeranboo.teleportspecific:
     description: Allows you to teleport
+  becomeranboo.chat:
+    description: Makes your chat ranboo-ier
+  becomeranboo.chatrecieve:
+    description: Receive the ranboo-ness of chat
+    default: not op

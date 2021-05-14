@@ -19,6 +19,7 @@ public final class BecomeRanboo extends JavaPlugin {
 
     @Override
     public void onDisable() {
+     System.out.println(ChatColor.GOLD + "[BecomeRanboo] Sleepy Ranboo going to bed now night night :>");
         // Plugin shutdown logic
     }
 }
