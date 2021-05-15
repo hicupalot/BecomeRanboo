@@ -23,4 +23,13 @@ public class EnderScare implements Listener {
             }
         }
     }
+
+    @EventHandler
+    public void Endermite(EntityDamageByEntityEvent e) {
+        if (e.getEntity().hasPermission("becomeranboo.enderimmune") && e.getEntity().getType().equals(EntityType.PLAYER)) {
+            if (e.getDamager().getType().equals(EntityType.ENDERMITE)) {
+                e.setCancelled(true);
+            }
+        }
+    }
 }
