@@ -6,6 +6,17 @@ authors: [ hicupalot ]
 description: Become Ranboo
 
 permissions:
+  becomeranboo.Ranboo:
+    description: Gives you the basic Ranboo Powers
+    children:
+      - becomeranboo.ender
+      - becomeranboo.freezelook
+      - becomeranboo.arrowdeflect
+      - becomeranboo.teleportspecific
+      - becomeranboo.chat
+      - becomeranboo.memorybook
+      - becomeranboo.enderimmune
+      - becomeranboo.waterdamage
   becomeranboo.silkhand:
     description: Gives you silk touch hands
   becomeranboo.ender:
@@ -28,3 +39,5 @@ permissions:
     description: Gives you a memory book
   becomeranboo.enderimmune:
     description: Makes you immune to Ender Mobs
+  becomeranboo.waterdamage:
+    description: Makes you take damage in water
