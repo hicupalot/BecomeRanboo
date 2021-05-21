@@ -11,14 +11,15 @@ import java.util.UUID;
 
 public class RanbooChat implements Listener {
     private HashMap<String, Long> ChatMessage = new HashMap<String, Long>();
+
     @EventHandler
-    public void Chat(AsyncPlayerChatEvent e){
-        if (e.getPlayer().hasPermission("becomeranboo.chat")){
-        ChatMessage.get(e.getMessage());
-        String chat = ChatMessage.toString();
-        e.setCancelled(true);
-        Bukkit.broadcast("<Ranboo> " + chat, "becomeranboo.chatrecieve");
-        ChatMessage.clear();
+    public void Chat(AsyncPlayerChatEvent e) {
+        if (e.getPlayer().hasPermission("becomeranboo.chat")) {
+            ChatMessage.get(e.getMessage());
+            String chat = ChatMessage.toString();
+            e.setCancelled(true);
+            Bukkit.broadcast("<Ranboo> " + chat, "becomeranboo.chatrecieve");
+            ChatMessage.clear();
 
         }
     }
