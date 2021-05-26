@@ -11,9 +11,6 @@ permissions:
     children:
       - becomeranboo.ender
       - becomeranboo.freezelook
-      - becomeranboo.arrowdeflect
-      - becomeranboo.teleportspecific
-      - becomeranboo.chat
       - becomeranboo.memorybook
       - becomeranboo.enderimmune
       - becomeranboo.waterdamage
@@ -26,18 +23,11 @@ permissions:
   becomeranboo.immunefreeze:
     description: makes you immmune to freezing
     default: op
-  becomeranboo.arrowdeflect:
-    description: Gives you the power of the enderman arrow deflection
-  becomeranboo.teleportspecific:
-    description: Allows you to teleport
-  becomeranboo.chat:
-    description: Makes your chat ranboo-ier
-  becomeranboo.chatrecieve:
-    description: Receive the ranboo-ness of chat
-    default: not op
   becomeranboo.memorybook:
     description: Gives you a memory book
   becomeranboo.enderimmune:
     description: Makes you immune to Ender Mobs
   becomeranboo.waterdamage:
     description: Makes you take damage in water
+  becomeranboo.anticheatender:
+    description: Makes it so you can't kill entities when you have the ender immune permission

@@ -9,13 +9,11 @@ public final class BecomeRanboo extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        this.saveDefaultConfig();
         System.out.println(ChatColor.GOLD + "[BecomeRanboo] Beginning to Load");
         getServer().getPluginManager().registerEvents(new EndermanSounds(), this);
         getServer().getPluginManager().registerEvents(new SilkHand(), this);
         getServer().getPluginManager().registerEvents(new FreezeonSight(), this);
-        getServer().getPluginManager().registerEvents(new Teleport(), this);
-        getServer().getPluginManager().registerEvents(new ArrowDeflector(), this);
         getServer().getPluginManager().registerEvents(new EnderScare(), this);
         getServer().getPluginManager().registerEvents(new MemoryBook(), this);
         getServer().getPluginManager().registerEvents(new WaterDamage(), this);
