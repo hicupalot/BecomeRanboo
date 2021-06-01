@@ -4,6 +4,11 @@ main: becomeranboo.com.hicupalot.Com.hicupalot
 api-version: 1.16
 authors: [ hicupalot ]
 description: Become Ranboo
+commands:
+  Height:
+    description: "Returns player height"
+    usage: /height
+    permission: becomeranboo.ranboofacts
 
 permissions:
   becomeranboo.Ranboo:
@@ -31,3 +36,6 @@ permissions:
     description: Makes you take damage in water
   becomeranboo.anticheatender:
     description: Makes it so you can't kill entities when you have the ender immune permission
+  becomeranboo.ranboofacts:
+    description: Gives you facts
+    default: op

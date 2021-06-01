@@ -18,11 +18,11 @@ public class EndermanSounds implements Listener {
     int min=5;
     int diff=max-min;
     Random rn = new Random();
-    int i = rn.nextInt(diff+1);
     int i2 =min;
     @EventHandler
     public void Genderman(BlockBreakEvent e ){
         if (e.getPlayer().hasPermission("becomeranboo.ender")) {
+            int i = rn.nextInt(diff+1);
             if (i == 10) {
                 e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.ENTITY_ENDERMAN_AMBIENT, 10, 29);
             }
