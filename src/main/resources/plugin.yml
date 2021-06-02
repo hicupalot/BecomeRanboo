@@ -1,6 +1,6 @@
-name: Com.hicupalot
+name: BecomeRanboo
 version: ${project.version}
-main: becomeranboo.com.hicupalot.Com.hicupalot
+main: com.hicupalot.BecomeRanboo
 api-version: 1.16
 authors: [ hicupalot ]
 description: Become Ranboo
@@ -9,6 +9,10 @@ commands:
     description: "Returns player height"
     usage: /height
     permission: becomeranboo.ranboofacts
+  MemoryBook:
+    description: "Resets the book"
+    usage: /memorybook
+    permission: becomeranboo.memorybook
 
 permissions:
   becomeranboo.Ranboo:
@@ -18,7 +22,9 @@ permissions:
       - becomeranboo.freezelook
       - becomeranboo.memorybook
       - becomeranboo.enderimmune
-      - becomeranboo.waterdamage
+      - becomeranboo.anticheatender
+      - becomeranboo.ranboofacts
+      - becomeranboo.silkhand
   becomeranboo.silkhand:
     description: Gives you silk touch hands
   becomeranboo.ender:
@@ -32,8 +38,6 @@ permissions:
     description: Gives you a memory book
   becomeranboo.enderimmune:
     description: Makes you immune to Ender Mobs
-  becomeranboo.waterdamage:
-    description: Makes you take damage in water
   becomeranboo.anticheatender:
     description: Makes it so you can't kill entities when you have the ender immune permission
   becomeranboo.ranboofacts:

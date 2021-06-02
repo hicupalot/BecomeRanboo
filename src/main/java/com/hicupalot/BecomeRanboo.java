@@ -1,9 +1,7 @@
 package com.hicupalot;
 
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.graalvm.compiler.nodeinfo.StructuralInput;
 
 public final class BecomeRanboo extends JavaPlugin {
 

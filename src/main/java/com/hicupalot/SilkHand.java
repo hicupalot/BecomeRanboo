@@ -13,11 +13,10 @@ public class SilkHand implements Listener {
     public void BlockBreak(BlockBreakEvent e){
         if (e.getPlayer().hasPermission("becomeranboo.silkhand")) {
             if (e.getPlayer().getGameMode() == GameMode.SURVIVAL) {
-                if (!e.getBlock().getType().equals(Material.AIR)) {
-                    if (e.getPlayer().getActiveItem().getType() == Material.AIR) {
+                if (!e.getBlock().getType().equals(Material.AIR) && !e.getBlock().isLiquid()) {
+                    if (e.getPlayer().getActiveItem().getType().isAir()) {
                         e.setDropItems(false);
-                        e.getPlayer().getWorld().dropItem(e.getBlock().getLocation().add(new Vector(0.5, 0.5, 0.5)),
-                                new ItemStack(e.getBlock().getType()));
+                       e.getPlayer().getWorld().dropItemNaturally(e.getPlayer().getLocation(),new ItemStack(e.getBlock().getType()));
                     }
                 }
             }
