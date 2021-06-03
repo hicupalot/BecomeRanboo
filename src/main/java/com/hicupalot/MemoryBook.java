@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
@@ -17,17 +18,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class MemoryBook implements Listener, CommandExecutor {
+public class MemoryBook implements Listener {
     private HashMap<UUID, Boolean> MemoryBook = new HashMap<UUID, Boolean>();
-
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender.hasPermission("becomeranboo.memorybook")) {
-            MemoryBook.remove(sender.getServer().getPlayer(String.valueOf(sender)).getUniqueId());
-            sender.sendMessage(ChatColor.GOLD + "Please region to recieve another Memory Book, this will appear in your off" +
-                    "so please make sure this slot is clear");
-        }
-    return false;
-    }
     @EventHandler
     public void Join(PlayerJoinEvent e) {
         Player p = e.getPlayer();
@@ -41,7 +33,16 @@ public class MemoryBook implements Listener, CommandExecutor {
                 inventory.setItem(EquipmentSlot.OFF_HAND, Memory);
                 MemoryBook.put(e.getPlayer().getUniqueId(), true);
             }
-
         }
     }
-}
+    @EventHandler
+    public void Command (PlayerCommandPreprocessEvent e){
+        if (e.getPlayer().hasPermission("becomeranboo.memorybook")) {
+            if (MemoryBook.containsKey(e.getPlayer().getUniqueId())) {
+                MemoryBook.remove(e.getPlayer().getUniqueId());
+                e.getPlayer().sendMessage(ChatColor.RED + "Rejoin the server for the new memory book to be awarded");
+            }
+        }
+                }
+            }
+

@@ -5,15 +5,10 @@ api-version: 1.16
 authors: [ hicupalot ]
 description: Become Ranboo
 commands:
-  Height:
+  height:
     description: "Returns player height"
     usage: /height
     permission: becomeranboo.ranboofacts
-  MemoryBook:
-    description: "Resets the book"
-    usage: /memorybook
-    permission: becomeranboo.memorybook
-
 permissions:
   becomeranboo.Ranboo:
     description: Gives you the basic Ranboo Powers
