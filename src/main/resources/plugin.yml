@@ -1,7 +1,7 @@
 name: BecomeRanboo
 version: ${project.version}
-main: com.hicupalot.BecomeRanboo
-api-version: 1.16
+main: BecomeRanboo
+api-version: 1.17
 authors: [ hicupalot ]
 description: Become Ranboo
 commands:
@@ -9,6 +9,10 @@ commands:
     description: "Returns player height"
     usage: /height
     permission: becomeranboo.ranboofacts
+  memory:
+    description: "Gives you a memory book!"
+    usage: /memory
+    permission: becomeranboo.memorybook
 permissions:
   becomeranboo.Ranboo:
     description: Gives you the basic Ranboo Powers
