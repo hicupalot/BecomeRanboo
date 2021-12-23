@@ -12,6 +12,10 @@ public class Height implements CommandExecutor {
             if (sender.hasPermission("becomeranboo.ranboofacts")){
                 sender.sendMessage(ChatColor.RED+ "You are 8\" 5'" + "or 6\" 7' depending on the day");
             }
+            else{
+                sender.sendMessage(ChatColor.RED+ "You do not have permission to use this command");
+                return false;
+            }
         }
     return false;
     }

@@ -4,6 +4,7 @@ import org.bukkit.Sound;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import java.util.Random;
 
@@ -15,7 +16,7 @@ public class EndermanSounds implements Listener {
     int i2 = min;
 
     @EventHandler
-    public void Genderman(BlockBreakEvent e) {
+    public void Genderman(AsyncPlayerChatEvent e) {
         if (e.getPlayer().hasPermission("becomeranboo.ender")) {
             int i = rn.nextInt(diff + 1);
             if (i == 10) {

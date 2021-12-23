@@ -23,6 +23,10 @@ public class MemoryBook implements CommandExecutor {
                 PlayerInventory inventory = ((Player) sender).getInventory();
                 inventory.setItem(EquipmentSlot.OFF_HAND, Memory);
             }
+        else{
+            sender.sendMessage(ChatColor.RED + "You do not have permission to use this command!");
+            return false;
+             }
         }
     return false;
         }
