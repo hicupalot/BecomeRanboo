@@ -42,3 +42,6 @@ permissions:
   becomeranboo.ranboofacts:
     description: Gives you facts
     default: op
+  becomeranboo.dragonimmune:
+    description: Makes you immune to Ender Dragons
+    default: op
