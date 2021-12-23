@@ -14,10 +14,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class MemoryBook implements CommandExecutor {
         public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
             if (sender instanceof Player) {
-        if (sender.hasPermission("becomeranboo.memorybook")) {
+             if (sender.hasPermission("becomeranboo.memorybook")) {
                 ItemStack Memory = new ItemStack(Material.WRITABLE_BOOK);
                 ItemMeta meta = Memory.getItemMeta();
-                meta.setDisplayName(ChatColor.BLUE + "Memory Book");
+                 assert meta != null;
+                 meta.setDisplayName(ChatColor.BLUE + "Memory Book");
                 Memory.setItemMeta(meta);
                 PlayerInventory inventory = ((Player) sender).getInventory();
                 inventory.setItem(EquipmentSlot.OFF_HAND, Memory);

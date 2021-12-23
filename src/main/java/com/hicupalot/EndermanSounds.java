@@ -1,15 +1,9 @@
 package com.hicupalot;
 
-import com.destroystokyo.paper.block.TargetBlockInfo;
-import org.bukkit.FluidCollisionMode;
-import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.Statistic;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.player.PlayerEvent;
-import org.bukkit.event.player.PlayerStatisticIncrementEvent;
 
 import java.util.Random;
 
