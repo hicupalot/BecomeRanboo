@@ -1,6 +1,6 @@
-name: BecomeRanboo
+name: com.hicupalot.BecomeRanboo
 version: ${project.version}
-main: BecomeRanboo
+main: com.hicupalot.BecomeRanboo
 api-version: 1.17
 authors: [ hicupalot ]
 description: Become Ranboo

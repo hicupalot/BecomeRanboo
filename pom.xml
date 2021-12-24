@@ -9,7 +9,7 @@
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>BecomeRanboo</name>
+    <name>com.hicupalot.BecomeRanboo</name>
 
     <description>Become Ranboo</description>
     <properties>

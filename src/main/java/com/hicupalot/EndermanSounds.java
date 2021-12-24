@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class EndermanSounds implements Listener {
     int max = 10;
-    int min = 5;
+    int min = 1;
     int diff = max - min;
     Random rn = new Random();
     int i2 = min;

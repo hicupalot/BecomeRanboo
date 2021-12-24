@@ -1,5 +1,6 @@
 package com.hicupalot;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -29,10 +30,20 @@ public class EnderScare implements Listener {
         if (e.getEntity().hasPermission("becomeranboo.enderimmune") && e.getEntity().getType().equals(EntityType.PLAYER)) {
             if (e.getDamager().getType().equals(EntityType.ENDERMITE) || e.getDamager().getType().equals(EntityType.ENDERMAN)) {
                 e.setCancelled(true);
-            }
-        else if (e.getDamager().getType().equals(EntityType.ENDER_DRAGON)) {
+            } else if (e.getDamager().getType().equals(EntityType.ENDER_DRAGON)) {
                 if (e.getEntity().hasPermission("becomeranboo.dragonimmune") && e.getEntity().getType().equals(EntityType.PLAYER)) {
                     e.setCancelled(true);
+                }
+            } else if (e.getDamager().getType().equals(EntityType.PLAYER) && e.getDamager().hasPermission("becomeranboo.enderimmune")) {
+                if (e.getEntity().getType().equals(EntityType.ENDERMAN) || e.getEntity().getType().equals(EntityType.ENDERMITE)) {
+                    e.getDamager().sendMessage(ChatColor.RED + "You can't hurt your friends!!");
+                    e.setCancelled(true);
+                } else if (e.getDamager().getType().equals(EntityType.PLAYER) && e.getDamager().hasPermission("becomeranboo.dragonimmune")) {
+                    if (e.getEntity().getType().equals(EntityType.ENDER_DRAGON)) {
+                        e.getDamager().sendMessage(ChatColor.RED + "You can't hurt your friends!");
+                        e.setCancelled(true);
+
+                    }
                 }
             }
         }
