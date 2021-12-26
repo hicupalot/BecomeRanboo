@@ -16,7 +16,7 @@ public class EndermanSounds implements Listener {
     public void Genderman(AsyncPlayerChatEvent e) {
         if (e.getPlayer().hasPermission("becomeranboo.ender")) {
             int i = rn.nextInt(diff + 1);
-            if (i == 10) {
+            if (i == 10) { // 10% chance
                 e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.ENTITY_ENDERMAN_AMBIENT, 10, 29);
             }
         }

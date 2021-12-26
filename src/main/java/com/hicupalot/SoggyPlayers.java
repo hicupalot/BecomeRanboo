@@ -26,9 +26,8 @@ public class SoggyPlayers extends BukkitRunnable {
                 return;
             }
             if (players.hasPermission("becomeranboo.ender")) {
-                if (players.isSwimming()) {
-                    assert (players.getInventory().getHelmet() != null);
-                    players.damage(1.5);
+                if (players.isSwimming()) { // If the player is swimming
+                    players.damage(1.5); // Damage the player
                     if (!Warned.containsKey(players.getUniqueId())) {
                         players.sendMessage(ChatColor.RED + "You are submerged in the water, get out!");
                         Warned.put(players.getUniqueId(), true);

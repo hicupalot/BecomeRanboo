@@ -17,8 +17,8 @@ public class Weather extends BukkitRunnable implements Listener {
         this.plugin = plugin;
     }
     public void run() {
-        for (Player players : Bukkit.getOnlinePlayers()) {
-            if (players.isEmpty()) {
+        for (Player players : Bukkit.getOnlinePlayers()) { // For each player online
+            if (players.isEmpty()) { //Checks if playerlist is empty
                 return;
             }
             if (!players.getWorld().isClearWeather()) {
@@ -27,12 +27,12 @@ public class Weather extends BukkitRunnable implements Listener {
                     if (players.getLocation().getBlockY() > players.getWorld().getHighestBlockYAt(players.getLocation()))
                         players.damage(0.5);
                 }
-                 if (!Warned.containsKey(players.getUniqueId())) {
-                     players.sendMessage(ChatColor.RED + "You are in the rain, you should seak shelter!");
+                 if (!Warned.containsKey(players.getUniqueId())) { // If player has not been warned
+                     players.sendMessage(ChatColor.RED + "You are in the rain, you should seak shelter!"); // Warn player
                      return;
                  }
-                 else if (Warned.get(players.getUniqueId())) {
-                     return;
+                 else if (Warned.get(players.getUniqueId())) { // If player has been warned
+                     return; // Do nothing
                  }
             }
         }

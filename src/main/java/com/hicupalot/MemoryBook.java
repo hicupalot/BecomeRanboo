@@ -23,16 +23,16 @@ public class MemoryBook implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             if (sender.hasPermission("becomeranboo.memorybook")) {
-                if (Confirm.containsKey(((Player) sender).getUniqueId())) {
+                if (Confirm.containsKey(((Player) sender).getUniqueId())) { // If the player has already confirmed
                     ItemStack Memory = new ItemStack(Material.WRITABLE_BOOK);
                     ItemMeta meta = Memory.getItemMeta();
                     assert meta != null;
-                    meta.setDisplayName(ChatColor.BLUE + "Memory Book");
+                    meta.setDisplayName(ChatColor.BLUE + "Memory Book"); // Set the name of the book
                     Memory.setItemMeta(meta);
                     PlayerInventory inventory = ((Player) sender).getInventory();
                     inventory.setItem(EquipmentSlot.OFF_HAND, Memory);
                     Confirm.remove(((Player) sender).getUniqueId());
-                } else if (!Confirm.containsKey(((Player) sender).getUniqueId())) {
+                } else if (!Confirm.containsKey(((Player) sender).getUniqueId())) { // If the player has not confirmed
                     Confirm.put(((Player) sender).getUniqueId(), true);
                     sender.sendMessage(ChatColor.RED + "Are you sure you want to make a memory book (IN YOUR OFF-HAND)? Type /memorybook again to confirm.");
                 } else {

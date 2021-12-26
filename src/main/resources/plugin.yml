@@ -4,6 +4,7 @@ main: com.hicupalot.BecomeRanboo
 api-version: 1.17
 authors: [ hicupalot ]
 description: Become Ranboo
+
 commands:
   height:
     description: "Returns player height"
@@ -21,13 +22,11 @@ permissions:
       - becomeranboo.freezelook
       - becomeranboo.memorybook
       - becomeranboo.enderimmune
-      - becomeranboo.anticheatender
-      - becomeranboo.ranboofacts
       - becomeranboo.silkhand
   becomeranboo.silkhand:
     description: Gives you silk touch hands
   becomeranboo.ender:
-    description: Makes enderman noises play
+    description: Gives you vulnerability to water and gives a chance for enderman sounds to play when you talk
   becomeranboo.freezelook:
     description: Makes you freeze players on look
   becomeranboo.immunefreeze:
@@ -37,11 +36,6 @@ permissions:
     description: Gives you a memory book
   becomeranboo.enderimmune:
     description: Makes you immune to Ender Mobs
-  becomeranboo.anticheatender:
-    description: Makes it so you can't kill entities when you have the ender immune permission
-  becomeranboo.ranboofacts:
-    description: Gives you facts
-    default: op
   becomeranboo.dragonimmune:
     description: Makes you immune to Ender Dragons
-    default: op
+    default-permission: op
