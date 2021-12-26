@@ -1,15 +1,11 @@
-name: com.hicupalot.BecomeRanboo
+name: BecomeRanboo
 version: ${project.version}
 main: com.hicupalot.BecomeRanboo
 api-version: 1.17
 authors: [ hicupalot ]
-description: Become Ranboo
+description: Gain the Powers of DreamSMP Ranboo
 
 commands:
-  height:
-    description: "Returns player height"
-    usage: /height
-    permission: becomeranboo.ranboofacts
   memory:
     description: "Gives you a memory book!"
     usage: /memory
