@@ -10,14 +10,12 @@ import java.util.Random;
 public class EndermanSounds implements Listener {
     int max = 10;
     int min = 1;
-    int diff = max - min;
-    Random rn = new Random();
     @EventHandler
     public void Genderman(AsyncPlayerChatEvent e) {
         if (e.getPlayer().hasPermission("becomeranboo.ender")) {
-            int i = rn.nextInt(diff + 1);
-            if (i == 10) { // 10% chance
-                e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.ENTITY_ENDERMAN_AMBIENT, 10, 29);
+            int i = (int)Math.floor(Math.random()*(max-min+1)+min);
+            if (i == 1) { // 10% chance
+                e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.ENTITY_ENDERMAN_AMBIENT, 10,1);
             }
         }
     }

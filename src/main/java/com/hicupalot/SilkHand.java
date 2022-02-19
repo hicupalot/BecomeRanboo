@@ -13,8 +13,7 @@ public class SilkHand implements Listener {
         if (e.getPlayer().hasPermission("becomeranboo.silkhand")) {
             if (e.getPlayer().getGameMode().equals(GameMode.SURVIVAL)) {
                 if (!e.getBlock().isLiquid()) {
-                    assert (e.getPlayer().getItemInUse()!= null);
-                    if (e.getPlayer().getItemInUse().equals(new ItemStack(Material.AIR))){
+                    if (e.getPlayer().getItemInUse() == null) {
                         e.setDropItems(false);
                         e.getPlayer().getWorld().dropItemNaturally(e.getBlock().getLocation(),new ItemStack(e.getBlock().getType()));
                     }

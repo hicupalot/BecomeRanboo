@@ -2,8 +2,10 @@ package com.hicupalot;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
+import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -13,7 +15,8 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class SoggyPlayers extends BukkitRunnable {
-    HashMap<UUID, Boolean> Warned = new HashMap<UUID, Boolean>();
+    HashMap<UUID, Boolean> WarnedSwim = new HashMap<UUID, Boolean>();
+    HashMap<UUID, Boolean> WarnedStand = new HashMap<UUID, Boolean>();
     private final JavaPlugin plugin;
 
     public SoggyPlayers(JavaPlugin plugin) {
@@ -21,34 +24,40 @@ public class SoggyPlayers extends BukkitRunnable {
     }
 
     public void run() {
-        for (Player players : Bukkit.getOnlinePlayers()) {
-            if (players.isEmpty()) {
+        //    System.out.println("SoggyPlayers is running"); //debug
+        if (Bukkit.getOnlinePlayers().isEmpty()) { //Checks if playerlist is empty
+            return;
+        }
+        //   System.out.println("Player is online"); //debug
+        for (Player player : Bukkit.getOnlinePlayers()) { // For each player online
+            if (!player.hasPermission("becomeranboo.ender")) {
                 return;
             }
-            if (players.hasPermission("becomeranboo.ender")) {
-                if (players.isSwimming()) { // If the player is swimming
-                    players.damage(1.5); // Damage the player
-                    if (!Warned.containsKey(players.getUniqueId())) {
-                        players.sendMessage(ChatColor.RED + "You are submerged in the water, get out!");
-                        Warned.put(players.getUniqueId(), true);
-                    } else if (players.getEyeLocation().add(0, -1, 0).getBlock().getType().equals(Material.WATER) ||
-                            players.getEyeLocation().add(0, -1, 0).getBlock().getType().equals(Material.WATER_CAULDRON)) {
-                        if (players.getInventory().getBoots() == null) {
-                            players.damage(0.75);
-                            if (!Warned.containsKey(players.getUniqueId())) {
-                                players.sendMessage(ChatColor.RED + "You need to get out of the water or put on boots!");
-                                Warned.put(players.getUniqueId(), true);
-                            } else if (!players.getInventory().getBoots().getItemMeta().getAttributeModifiers().containsKey(Attribute.GENERIC_ARMOR)) {
-                                players.damage(0.75);
-                                if (!Warned.containsKey(players.getUniqueId())) {
-                                    players.sendMessage(ChatColor.RED + "You need to get out of the water or put on boots!");
-                                    Warned.put(players.getUniqueId(), true);
-                                }
-                            }
-                        }
-                    }
+            if (!player.getGameMode().equals(GameMode.SURVIVAL) && !player.getGameMode().equals(GameMode.ADVENTURE)) { //Checks if gamemode is survival or adventure
+                return;
+            }
+            if (player.isSwimming()) { // If the player is swimming
+                 player.damage(1.5); // Damage the player
+                 if (!WarnedSwim.containsKey(player.getUniqueId())) {
+                     player.sendMessage(ChatColor.RED + "You are submerged in the water, get out!");
+                     WarnedSwim.put(player.getUniqueId(), true);
+                    // System.out.println("Player is swimming"); //debug
+                 }
+                 return;
+            }
+            if (player.getInventory().getBoots() != null) {
+              //  System.out.println("Player has boots"); //debug
+                return;
+            }
+            if (player.getEyeLocation().add(0, -1, 0).getBlock().getType().equals(Material.WATER)) {  // Checks if chest is in cauldron
+              //  System.out.println("Player is in water"); //debug
+                player.damage(0.75);
+                if (!WarnedStand.containsKey(player.getUniqueId())) {
+                    player.sendMessage(ChatColor.RED + "You need to get out of the water or put on boots!");
+                    WarnedStand.put(player.getUniqueId(), true);
                 }
             }
         }
     }
 }
+

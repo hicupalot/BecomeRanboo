@@ -41,6 +41,6 @@ public class MemoryBook implements CommandExecutor {
                 }
             }
         }
-    return false;
+    return true;
     }
 }
